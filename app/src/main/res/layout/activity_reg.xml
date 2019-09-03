@@ -7,14 +7,15 @@
     android:background="@drawable/wave1"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context="com.example.myapplication.MainActivity">
+    tools:context=".RegActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/login"
+        android:text="@string/reg"
         android:textSize="25sp"
         android:textColor="@android:color/white" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -61,49 +62,27 @@
             android:inputType="textPassword"
             />
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_horizontal">
 
-        <Button
-            android:id="@+id/bt_log"
+        <TextView
+            android:id="@+id/tv_repassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="@string/bt_log"/>
-    </LinearLayout>
+            android:text="@string/tv_password"
+            android:textSize="20sp"
+            android:textColor="#000000"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal">
-
-        <!--<Button-->
-        <!--android:id="@+id/bt_log"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="@string/bt_log"/>-->
-
-        <Button
-            android:id="@+id/bt_bos"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/et_repassword"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:textColor="@android:color/white"
-            android:text="@string/bt_bos"/>
-
-        <Button
-            android:id="@+id/bt_save"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:textColor="@android:color/white"
-            android:text="@string/bt_save"/>
-
+            android:hint="@string/et_password"
+            android:inputType="textPassword"
+            />
     </LinearLayout>
 
 </LinearLayout>
