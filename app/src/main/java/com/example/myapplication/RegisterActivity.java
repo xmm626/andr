@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.example.myapplication.utils.MD5Utils;
 
-public class RegActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
     private EditText etUsername,etPassword,etPadAgain;
     private Button btnBos;
     @Override
@@ -28,15 +28,15 @@ public class RegActivity extends AppCompatActivity {
                 String padagain=etPadAgain.getText().toString();
 
                 if (TextUtils.isEmpty(username)){
-                    Toast.makeText(RegActivity.this,"用户名不能为空",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this,"用户名不能为空",Toast.LENGTH_SHORT).show();
 
                 }else if(TextUtils.isEmpty(password)){
-                    Toast.makeText(RegActivity.this,"密码不能为空",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this,"密码不能为空",Toast.LENGTH_SHORT).show();
                 }else if(TextUtils.isEmpty(padagain)){
-                    Toast.makeText(RegActivity.this,"两次密码必须一致",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this,"两次密码必须一致",Toast.LENGTH_SHORT).show();
                 }else{
                     savePref(username,MD5Utils.md5(password));
-                    Intent intent=new Intent(RegActivity.this,MainActivity.class);
+                    Intent intent=new Intent(RegisterActivity.this,MainActivity.class);
                     intent.putExtra("username",username);
                     startActivity(intent);
                 }
@@ -45,7 +45,8 @@ public class RegActivity extends AppCompatActivity {
     }
 
     private void savePref(String username,String password) {
-        SharedPreferences.Editor editor=getSharedPreferences("data",MODE_PRIVATE).edit();
+        SharedPreferences sp = getSharedPreferences("userInfo",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
         editor.putString("username",username);
         editor.putString("password",password);
         editor.apply();
