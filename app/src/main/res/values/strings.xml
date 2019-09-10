@@ -11,4 +11,14 @@
     <string name="et_password">输入密码</string>
     <string name="reg">欢迎注册</string>
     <string name="et_repassword">请再输入密码</string>
+    <string name="pass">密码</string>
+    <string name="user_input">请输入用户名</string>
+    <string name="pass_input">请输入密码</string>
+    <string name="repass_input">请再次输入密码</string>
+    <string name="login_error">忘记密码</string>
+    <string name="register">注册</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

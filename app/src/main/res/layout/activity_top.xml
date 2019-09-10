@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TopActivity">
+
+    <FrameLayout
+        android:id="@+id/fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll_main_radio"
+        android:layout_marginBottom="0dp"></FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/ll_main_radio"
+        android:background="@color/colorAccent" />
+
+    <LinearLayout
+        android:id="@+id/ll_main_radio"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:paddingTop="5dp">
+
+        <RadioGroup
+            android:id="@+id/rg_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_main"
+                style="@style/rb_style"
+                android:checked="true"
+                android:drawableTop="@drawable/br_main"
+                android:text="首页"/>
+
+            <RadioButton
+                android:id="@+id/rb_message"
+                style="@style/rb_style"
+                android:drawableTop="@drawable/br_message"
+                android:text="消息"/>
+
+            <RadioButton
+                android:id="@+id/rb_find"
+                style="@style/rb_style"
+                android:drawableTop="@drawable/br_find"
+                android:text="发现"/>
+
+            <RadioButton
+                android:id="@+id/rb_my"
+                style="@style/rb_style"
+                android:drawableTop="@drawable/br_my"
+                android:text="我的"/>
+        </RadioGroup>
+
+    </LinearLayout>
+
+</RelativeLayout>
