@@ -15,7 +15,7 @@ public class MainFragment extends Fragment {
 
     private static MainFragment mainf;
 
-    public static Fragment getMainFragment(){
+    public static MainFragment getMainFragment(){
         if (mainf == null){
             mainf = new MainFragment();
         }

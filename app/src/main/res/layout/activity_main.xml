@@ -9,17 +9,23 @@
     tools:context="com.example.myapplication.MainActivity">
     <include layout="@layout/tool_bar"/>
 
+    <include layout="@layout/tool_bar"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
         android:text="@string/login"
         android:textSize="25sp"
+        android:layout_gravity="center"
         android:textColor="@android:color/white" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:textColorHint="#a3a3a3"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
         android:gravity="center_horizontal">
 
         <TextView
@@ -32,7 +38,7 @@
 
         <EditText
             android:id="@+id/et_username"
-            android:layout_width="160dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/et_username"
             android:singleLine="true"
@@ -43,7 +49,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
         android:gravity="center_horizontal">
+
 
         <TextView
             android:id="@+id/tv_password"
@@ -55,7 +64,7 @@
 
         <EditText
             android:id="@+id/et_password"
-            android:layout_width="160dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/et_password"
             android:inputType="textPassword"
@@ -66,13 +75,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
         android:gravity="center_horizontal">
 
         <Button
             android:id="@+id/bt_log"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:textSize="22dp"
             android:text="@string/bt_log"/>
     </LinearLayout>
 
@@ -92,16 +103,20 @@
             android:id="@+id/bt_bos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingRight="20dp"
             android:background="@android:color/transparent"
+            android:text="@string/bt_bos"
             android:textColor="@android:color/white"
-            android:text="@string/bt_bos"/>
+            android:textSize="20dp" />
 
         <Button
-            android:id="@+id/bt_save"
+            android:id="@+id/bt_find_pwd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
             android:background="@android:color/transparent"
             android:textColor="@android:color/white"
+            android:textSize="20dp"
             android:text="@string/bt_save"/>
 
     </LinearLayout>

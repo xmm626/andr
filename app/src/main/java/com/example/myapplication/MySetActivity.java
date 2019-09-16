@@ -1,45 +1,91 @@
 package com.example.myapplication;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.SparseArray;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.LinearLayout;
 
 public class MySetActivity extends AppCompatActivity {
-    private SparseArray<Fragment> fragmnets;
+    private LinearLayout chang,btQuit,setPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_set);
 
-        initView();
-        initTitles();
-        initFragment();
+        initToolbar();
+
+        chang = findViewById(R.id.mf_password);
+        btQuit = findViewById(R.id.bt_esc);
+        setPassword = findViewById(R.id.set_pa_pwd);
+
+        setPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MySetActivity.this, SavePwdActivity.class);
+                intent.putExtra("isVis2",true);
+                startActivity(intent);
+            }
+        });
+
+        chang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MySetActivity.this,ChangeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btQuit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new AlertDialog.Builder(MySetActivity.this)
+                        .setTitle("提示")
+                        .setMessage("是否退出登陆")
+                        .setPositiveButton("是",new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                SharedPreferences.Editor editor = getSharedPreferences("userInfo",MODE_PRIVATE).edit();
+                                editor.putBoolean("isLogin",false);
+                                editor.apply();
+                                Intent intent = new Intent(MySetActivity.this,MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        })
+                        .setNegativeButton("否", null)
+                        .show();
+                /*SharedPreferences.Editor editor = getSharedPreferences("userInfo",MODE_PRIVATE).edit();
+                editor.putBoolean("isLogin",false);
+                editor.apply();
+                Intent intent = new Intent(MySetActivity.this,MainActivity.class);
+                startActivity(intent);*/
+            }
+        });
+
     }
 
-    private void initTitles() {
-        //创建fragment的列表
-        fragmnets = new SparseArray<>();
-        fragmnets.put(R.id.btn_me,MyInfoFragment.newInstance());
 
-        //加载默认的Fragment
-        replaceFragment(fragmnets.get(R.id.btn_me));
+    private void initToolbar() {
+        Toolbar toolbar = findViewById(R.id.title_toolbar);
+        toolbar.setTitle("设置");
+        setSupportActionBar(toolbar);
+
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null){
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MySetActivity.this.finish();
+            }
+        });
     }
-
-    private void replaceFragment(Fragment fragment){
-        FragmentManager manager = getSupportFragmentManager();
-        FragmentTransaction ft = manager.beginTransaction();
-        ft.replace(R.id.main_body,fragment);
-        ft.commit();
-    }
-
-    private void initView() {
-    }
-
-    private void initFragment() {
-    }
-
 }

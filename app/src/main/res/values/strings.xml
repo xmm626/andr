@@ -17,7 +17,7 @@
     <string name="repass_input">请再次输入密码</string>
     <string name="login_error">忘记密码</string>
     <string name="register">注册</string>
-
+    <string name="password">输入原密码</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -9,20 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/NoActionBar">
-        <activity android:name=".SetActivity"></activity>
+        <activity android:name=".SavePwdActivity"></activity>
+        <activity android:name=".ChangeActivity" />
         <activity android:name=".MySetActivity">
+
+        </activity>
+        <activity android:name=".MyFragment" />
+        <activity android:name=".MainFragment" />
+        <activity android:name=".TopActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MyInfoFragment" />
-        <activity android:name=".MainFragment" />
-        <activity android:name=".TopActivity"></activity>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".SplashActivity" />
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

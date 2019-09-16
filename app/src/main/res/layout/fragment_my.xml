@@ -6,26 +6,29 @@
     tools:context=".MyFragment">
 
     <LinearLayout
+        android:id="@+id/ll_head"
         android:layout_width="match_parent"
         android:layout_height="360dp"
         android:orientation="vertical"
-        android:background="@drawable/infobgg">
+        android:background="@drawable/wave1">
 
         <ImageView
             android:layout_width="178dp"
             android:layout_height="172dp"
             android:layout_gravity="center"
             android:layout_marginTop="60dp"
-            android:background="@drawable/wave1" />
+            android:background="@drawable/avatar" />
         <TextView
+            android:id="@+id/tv_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textSize="30sp"
-            android:text="我的" />
+            android:text="点击登陆" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/rl_history"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="400dp"
